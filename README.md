@@ -1,118 +1,39 @@
-<h1 align="center">Boilerplate React.js + TypeScript + Vite 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/fdaciuk" target="_blank">
-    <img alt="Twitter: fdaciuk" src="https://img.shields.io/twitter/follow/fdaciuk.svg?style=social" />
-  </a>
-</p>
+# Fifa-web-app
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+FIFA web app written with NextJS
 
-> Boilerplate to create React.js apps with Vite
+## Get Started
 
-## Which techs this boilerplate have in it?
+To get started do the following:
 
-This boilerplate is ready to be used by devs who want to start a new project using React.js, TypeScript and Jest with Vite.
+1. Install NPM modules with yarn `yarn`
+2. To start developing components, run `yarn storybook` to run the storybook server
+3. To start developing on the web app, run `yarn dev` to run the NextJS app in dev.
 
-## Main configurations
+## What has been bootstrapped
 
-- React.js 18+ with TypeScript;
-  - You can import "svgs" with `import { ReactComponent as MyIcon } from './icon-path.svg'`;
-  - You can import any other media (images, videos, etc) that is located inside `src` directory;
-  - You can use absolute imports, using `@` as `src` directory;
-- Eslint:
-  - [Standard](https://standardjs.com/) with some modifications;
-  - React Hooks and other React configurations with [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app) (same used in Create React App);
-- Automatic lint and type-checking with Husky before every commit.
+This repo contains a bunch of bootstrapped elements with examples to ease development. Below will be an outline of what elements have been boostrapped and what they do
 
-## Usage
+### NextJS
 
-Install the dependencies:
+Main framework used in this project, used alongside React and Typescript to form the core of the project. See [here](nextjs.org/) for more details
 
-```sh
-yarn install
-```
+### Storybook/Components
 
-Run dev server:
+This project uses [storybook](https://storybook.js.org/) to aid with component development. Pages should be split up into components which can be developed entirely through storybook and storybook stories. To start a storybook server run `yarn storybook`
 
-```sh
-yarn dev
-```
+### Tailwind/CSS modules
 
-You can run type-checking in watch mode in another terminal, if you may:
+This project uses tailwind to quickly bootstrap css elements. Make sure you have the vscode extension `bradlc.vscode-tailwindcss` to make tailwind easier to use. This project also uses CSS modules which will scope HTML class names locally to avoid conflicts. Use CSS modules whenever using more complex CSS (i.e using media queries)
 
-```sh
-yarn type-check --watch
-```
+### React Query / Axios
 
-## Run tests
+React query is used to easily handle API requests, specifically using hooks to deal with error/loading states, caching and prefetching requests. We use axios beneath react query to make the requests.
 
-```sh
-yarn test
-```
+### Zustand
 
-## Production version
+Zustand is the project's global state manager see [here](https://github.com/pmndrs/zustand). Zustand is lightweight and is setup to deal with persisting global storage as well (for global state elements stored in local storage between different sessions)
 
-To generate the production version, you can run:
+### Blueprint templates
 
-```sh
-yarn build
-```
-
-All files you have to deploy will be located at the `dist` directory.
-
-### Run production version locally
-
-To check if everything will be ok in production before the deployment, you can run this command after `yarn build`:
-
-```sh
-yarn preview
-```
-
-## Author
-
-👤 **Fernando Daciuk**
-
-* Website: https://daciuk.dev
-* Twitter: [@fdaciuk](https://twitter.com/fdaciuk)
-* Github: [@fdaciuk](https://github.com/fdaciuk)
-* LinkedIn: [@fdaciuk](https://linkedin.com/in/fdaciuk)
-* Instagram : [@fdaciuk](https://instagram.com/fdaciuk)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fdaciuk/boilerplate-vite-react/issues). 
-
-## ✨ Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/fdaciuk"><img src="https://avatars.githubusercontent.com/u/487669?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fernando Daciuk</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=fdaciuk" title="Code">💻</a> <a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=fdaciuk" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/gabepinheiro"><img src="https://avatars.githubusercontent.com/u/45916330?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gabriel Pinheiro</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=gabepinheiro" title="Code">💻</a></td>
-    <td align="center"><a href="http://newcapital.in@gmail.com"><img src="https://avatars.githubusercontent.com/u/81476236?v=4?s=100" width="100px;" alt=""/><br /><sub><b>NewCapital.in</b></sub></a><br /><a href="https://github.com/fdaciuk/boilerplate-vite-react/commits?author=SallesCosta" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+In the root directory under folder `.templates`, is a vscode plugin called `teamchilla.blueprint`. This plugin is used to quickly boostrap files in a certain format. It is used atm, to bootstrap components quickly with a main file, a storybook story and an CSS module. Feel free to add more templates where you see fit!
