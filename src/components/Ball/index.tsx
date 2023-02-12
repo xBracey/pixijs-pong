@@ -27,7 +27,7 @@ const Ball = ({ angle, speed, x, setX, y, setY }: IBall) => {
             x={x}
             y={y}
             rotation={0}
-            anchor={0}
+            anchor={0.5}
             width={ballDiameter}
             height={ballDiameter}
             texture={Texture.WHITE}

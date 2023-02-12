@@ -12,10 +12,14 @@ export const useAI = (
     ballY: number
 ) => {
     useTick(() => {
-        if (ballY < y) {
-            setY((y) => findMiddle(minY + boardHeight / 2, maxY - boardHeight / 2, y) - aiSpeed);
-        } else if (ballY > y) {
-            setY((y) => findMiddle(minY + boardHeight / 2, maxY - boardHeight / 2, y) + aiSpeed);
+        const willMove = Math.random() > 0.15;
+
+        if (willMove) {
+            if (ballY < y) {
+                setY((y) => findMiddle(minY + boardHeight / 2, maxY - boardHeight / 2, y) - aiSpeed);
+            } else if (ballY > y) {
+                setY((y) => findMiddle(minY + boardHeight / 2, maxY - boardHeight / 2, y) + aiSpeed);
+            }
         }
     });
 };

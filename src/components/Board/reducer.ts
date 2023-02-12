@@ -18,7 +18,16 @@ type SetBallY = {
     payload: { y: (y: number) => number };
 };
 
-type BoardActions = SetPlayer1YAction | SetPlayer2YAction | SetBallX | SetBallY;
+type SetBallAngle = {
+    type: 'SET_BALL_ANGLE';
+    payload: { angle: (angle: number) => number };
+};
+
+type Reset = {
+    type: 'RESET';
+};
+
+type BoardActions = SetPlayer1YAction | SetPlayer2YAction | SetBallX | SetBallY | SetBallAngle | Reset;
 
 interface BoardState {
     player1Y: number;
@@ -29,8 +38,8 @@ interface BoardState {
 }
 
 export const initialState: BoardState = {
-    player1Y: 336,
-    player2Y: 336,
+    player1Y: 400,
+    player2Y: 400,
     ballX: 400,
     ballY: 400,
     ballAngle: (7 * Math.PI) / 4
@@ -58,6 +67,14 @@ export const reducer = (state: BoardState, action: BoardActions): BoardState => 
                 ...state,
                 ballY: action.payload.y(state.ballY)
             };
+        case 'SET_BALL_ANGLE':
+            return {
+                ...state,
+                ballAngle: action.payload.angle(state.ballAngle)
+            };
+
+        case 'RESET':
+            return initialState;
 
         default:
             return state;
