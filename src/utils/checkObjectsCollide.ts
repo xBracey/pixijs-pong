@@ -1,12 +1,5 @@
 import { checkLineIntersects } from './checkLineIntersects';
 
-interface GameObject {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-}
-
 export const checkObjectsCollide = (obj1: [number, number][], obj2: [number, number][]): boolean => {
     for (let index = 0; index < obj1.length; index++) {
         const point1 = obj1[index];

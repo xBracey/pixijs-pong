@@ -12,7 +12,7 @@ export const useAI = (
     ballY: number
 ) => {
     useTick(() => {
-        const willMove = Math.random() > 0.15;
+        const willMove = Math.random() > 0.2;
 
         if (willMove) {
             if (ballY < y) {

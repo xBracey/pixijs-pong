@@ -23,13 +23,20 @@ type SetBallAngle = {
     payload: { angle: (angle: number) => number };
 };
 
-type Reset = {
-    type: 'RESET';
+type SetBallSpeed = {
+    type: 'SET_BALL_SPEED';
+    payload: { speed: (speed: number) => number };
 };
 
-type BoardActions = SetPlayer1YAction | SetPlayer2YAction | SetBallX | SetBallY | SetBallAngle | Reset;
+type Reset = {
+    type: 'RESET';
+    payload: { angle: number };
+};
+
+type BoardActions = SetPlayer1YAction | SetPlayer2YAction | SetBallX | SetBallY | SetBallAngle | Reset | SetBallSpeed;
 
 interface BoardState {
+    ballSpeed: number;
     player1Y: number;
     player2Y: number;
     ballX: number;
@@ -38,6 +45,7 @@ interface BoardState {
 }
 
 export const initialState: BoardState = {
+    ballSpeed: 5,
     player1Y: 400,
     player2Y: 400,
     ballX: 400,
@@ -73,8 +81,14 @@ export const reducer = (state: BoardState, action: BoardActions): BoardState => 
                 ballAngle: action.payload.angle(state.ballAngle)
             };
 
+        case 'SET_BALL_SPEED':
+            return {
+                ...state,
+                ballSpeed: action.payload.speed(state.ballSpeed)
+            };
+
         case 'RESET':
-            return initialState;
+            return { ...initialState, ballAngle: action.payload.angle };
 
         default:
             return state;
