@@ -5,7 +5,7 @@ export const useKeyDown = (events: { key: string; callback: () => void }[]) => {
         const event = events.find(({ key }) => key === e.key);
 
         if (event) {
-            const { key, callback } = event;
+            const { callback } = event;
 
             callback();
         }
