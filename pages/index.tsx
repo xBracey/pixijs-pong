@@ -28,7 +28,7 @@ const Index = () => {
 
                 <Stage width={800} height={600}>
                     <Board
-                        player1Type="computer"
+                        player1Type="human"
                         player2Type="computer"
                         player1Point={player1Point}
                         player2Point={player2Point}
